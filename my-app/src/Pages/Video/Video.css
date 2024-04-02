@@ -1,0 +1,16 @@
+.videos-container{
+    width: 100%;
+}
+
+.videos-container h1{
+    font-size: 26px;
+}
+.videos-container span{
+    color: red;
+    font-weight: bold;
+}
+
+.videos-list-container{
+    display: flex;
+    flex-wrap: wrap;
+}

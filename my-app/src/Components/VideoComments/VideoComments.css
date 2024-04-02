@@ -1,0 +1,53 @@
+.comment-profile-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 35px;
+}
+
+.video-comments-container{
+    list-style-type: none;
+    padding: 0px;
+}
+
+.comments-list-items{
+    display: flex;
+    align-items: center;
+}
+
+.comment-content-container{
+    margin-left: 10px;
+}
+
+.comment-content-container h1{
+    font-size: 16px;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+.comment-content-container p{
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.comment-likes-container{
+    display: flex;
+    align-items: center;
+}
+
+.like-card{
+    display: flex;
+    align-items: center;
+    margin-right: 7px;
+}
+.like-card .like-icon{
+    font-size: 17px;
+}
+
+.like-card p{
+    font-size: 14px;
+    margin-left: 5px;
+    margin-bottom: 2px;
+}
+
+
+

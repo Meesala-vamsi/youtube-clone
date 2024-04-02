@@ -1,0 +1,53 @@
+.related-videos-container{
+    padding: 5px 0px;
+    list-style-type: none;
+    width: 30%;
+}
+.related-video-list-items{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.related-images{
+    width: 200px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.related-videos-content-container{
+    margin-left: 7px;
+    width: 60%;
+    align-self: flex-start;
+    margin-top: 0px;
+}
+
+.related-videos-channel-container p{
+    color: gray;
+}
+
+.related-videos-title{
+    font-size: 16px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    margin-top: 3px;
+    /* white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; */
+    /* display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limit the text to two lines 
+  -webkit-box-orient: vertical; */
+  /* width: 200px; */
+}
+.releted-video-circle{
+    color: gray;
+}
+
+.related-videos-channel-container{
+    display: flex;
+    align-items: center;
+}
+
+.related-videos-channel-container p{
+    margin-right: 5px;
+}
