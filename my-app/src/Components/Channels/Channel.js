@@ -91,7 +91,7 @@ const Channel = () => {
             <ul className="channel-video-list">
                 {getChannelVideos.map((eachVideo)=>(
                     <li className='channel-video-items'>
-                        <Link to={`/video/${eachVideo.id.videoId}`} className='nav-link'>
+                        <Link to={`/videoDetails/${eachVideo.id.videoId}`} className='nav-link'>
                             <img src={eachVideo.snippet.thumbnails.high.url} alt="" />
                             <div>
                                 <p>{eachVideo.snippet.title}</p>

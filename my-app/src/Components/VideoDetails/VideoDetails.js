@@ -65,8 +65,8 @@ const VideoDetails = () => {
     <div className="video-details-container">
       <div className='container1'>
       <div className="success-video-details-container">
-        <div style={{ borderRadius: '15px', overflow: 'hidden', height:'100%' }}>
-          <ReactPlayer url={`https://www.youtube.com/watch?v=${videoId}`} controls  className='reac-player' width="100%" height="100%" borderRadius="30px"/>
+        <div className='react-player-container'>
+          <ReactPlayer url={`https://www.youtube.com/watch?v=${videoId}`} controls  className='react-player' width="100%" height="100%" borderRadius="30px"/>
         </div>
         <h1 className='video-details-heading'>{getVideos.snippet.title}</h1>
         <div className='title-container'>
@@ -79,9 +79,14 @@ const VideoDetails = () => {
             <p>{parseInt(getVideos.statistics.viewCount).toLocaleString()} views</p>
           </div>
         </div>
-        <VideoComments videoId={videoId}/>
+        <div className='desktop-comments'>
+        <VideoComments videoId={videoId} />
+        </div>
       </div>
       <RelatedVideosCard videoId={videoId}/>
+      <div className='mobile-comments'>
+        <VideoComments videoId={videoId} />
+        </div>
       </div>
     </div>
   )

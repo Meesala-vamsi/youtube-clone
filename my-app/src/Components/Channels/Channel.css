@@ -1,7 +1,6 @@
 .channel-main-container{
     padding: 0px 30px;
     display: flex;
-    height: 100vh;
     
 
 }
@@ -20,7 +19,6 @@
     margin-bottom: 28px;
 }
 .channel-profile-container{
-   
     display: flex;
 }
 
@@ -83,4 +81,46 @@
 
 .channel-video-items p{
     font-size: 14px;
+}
+
+@media screen and (max-width:768px){
+    .channel-main-container{
+        padding: 0px;
+    }
+    .channel-success-container{
+        margin-left: 0px;
+    }
+    
+
+    .channel-success-container div:first-child img{
+        height: 100px;
+        width: 260px;
+    }
+
+    .channel-profile-container img{
+        height: 80px;
+        width: 80px;
+    }
+    .channel-profile-content div:first-child h1{
+        font-size: 17px;
+    }
+    .subscribers-container p{
+        margin-right: 4px;
+        font-size: 7px;
+    }
+    
+    .channel-video-items{
+        width: 90px;
+        margin-right: 6px;
+    }
+
+    .channel-video-items img{
+        height: 70px;
+    }
+    .channel-video-items div p{
+        font-size: 6px;
+    }
+    .channel-success-container img {
+        margin-bottom: 5px;
+    }
 }

@@ -51,3 +51,12 @@
 .related-videos-channel-container p{
     margin-right: 5px;
 }
+
+@media screen and (max-width:768px){
+    .related-video-list-items{
+        display: flex;
+    }
+    .related-videos-container{
+        width: auto;
+    }
+}
