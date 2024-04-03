@@ -66,10 +66,11 @@ span{
 
 @media screen and (max-width:768px){
     .video-list-items{
-        width: 150px;
+        width: 140px;
       
         height: auto;
-        margin-left: 10px;
+        margin-left: 5px;
+      
     }
     .video-list-items img {
         height: 100px;  
@@ -79,7 +80,7 @@ span{
         font-size: 12px;
     }
     .videos-list-conatiner{
-        justify-content: center;
+        justify-content: space-evenly;
     }
     .channel-container p{
         font-size: 6px;

@@ -8,7 +8,6 @@
     position: sticky;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     z-index: 10;
-    width: 100%;
 }
 
 .nav-left .menu-icon{
@@ -117,7 +116,7 @@
 
     .notifications-count{
         bottom: 5px;
-        left: 17px;
+        left: 11.5px;
         font-size: 2px;
         padding: 2.5px 3.5px;
         border-radius: 15px;
