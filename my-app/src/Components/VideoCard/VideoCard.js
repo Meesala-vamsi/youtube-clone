@@ -10,11 +10,11 @@ const VideoCard = ({videoCardData}) => {
     const params = useParams();
     const {id} = params
 
-    const homeHeading=id[0].toUpperCase()+id.slice(1)
+    
     
   return (
     <div className='video-card-container'>
-        <h1>{homeHeading} <span>videos</span></h1>
+        <h1>{id} <span>videos</span></h1>
         <ul className="videos-list-conatiner">
             {videoCardData.items.map((eachItem)=>(
                 <Link to={`/videoDetails/${eachItem.id.videoId}`} className='nav-link'>
