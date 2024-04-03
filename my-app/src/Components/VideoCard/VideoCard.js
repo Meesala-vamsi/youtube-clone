@@ -6,7 +6,6 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 import './VideoCard.css'
 
 const VideoCard = ({videoCardData}) => {
-    const navigate=useNavigate()
     const params = useParams();
     const {id} = params
 
@@ -17,7 +16,7 @@ const VideoCard = ({videoCardData}) => {
         <h1>{id} <span>videos</span></h1>
         <ul className="videos-list-conatiner">
             {videoCardData.items.map((eachItem)=>(
-                <Link to={`/videoDetails/${eachItem.id.videoId}`} className='nav-link'>
+                <Link to={`/videoDetails/${eachItem.id.videoId}`} className='nav-link' key={eachItem.id.videoId}>
                     <li className='video-list-items'>
                         <img src={eachItem.snippet.thumbnails.high.url} alt="" className='video-image' />
                         <h1 className='channel-title'>{eachItem.snippet.title}</h1>

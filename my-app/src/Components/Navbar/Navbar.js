@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CiMenuBurger } from "react-icons/ci";
 import { FaYoutube } from "react-icons/fa6";
 import { GoSearch } from "react-icons/go";
@@ -10,7 +10,11 @@ import ReactContext from '../../ReactContext/Context';
 import { Link } from 'react-router-dom';
 
 const Navbar=(props)=>{
-  const {setSidebar} = useContext(ReactContext)
+  const {setSidebar,setSearchInput} = useContext(ReactContext)
+
+  const onChangeInput=(event)=>{
+    setSearchInput(event.target.value)
+  }
   return (
     <nav className='nav-container'>
       
@@ -26,7 +30,7 @@ const Navbar=(props)=>{
       
       <div className='nav-middle flex-div'>
         <div className="search-box flex-div">
-          <input type="text" className='nav-input' placeholder='Search' />
+          <input type="search" className='nav-input' placeholder='Search' onChange={onChangeInput} />
           <GoSearch className='search-icon'/>
         </div>
         

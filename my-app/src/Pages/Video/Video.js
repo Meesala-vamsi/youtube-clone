@@ -18,17 +18,18 @@ const optionDetails={
 export const Video = () => {
   const [getVideos,setVideos] = useState([])
   const [statusData,setStatus] = useState(optionDetails.initial)
+  const {getSearchInput} = useContext(ReactContext)
   const params = useParams();
   const {id} = params
-  console.log(id)
   useEffect(()=>{
     const getDetails=async()=>{
+
 
         const options={
           method:"GET",
           url: 'https://youtube-v31.p.rapidapi.com/search',
           params: {
-            q: id,
+            q: getSearchInput,
             part: 'snippet,id',
             regionCode: 'US',
             maxResults: '50',
@@ -45,13 +46,16 @@ export const Video = () => {
         if(response.status===200){
           setVideos(response.data)
           setStatus(optionDetails.success)
+          response.data.items.filter((eachVideo)=>(
+              eachVideo.snippet.title.toLowerCase().includes(getSearchInput.toLowerCase())
+          ))
+
         }
     }
 
     getDetails();
-  },[id])
+  },[id,getSearchInput])
 
-  console.log(getVideos)
 
   const loadingView=()=>(
     <div>Loading......</div>

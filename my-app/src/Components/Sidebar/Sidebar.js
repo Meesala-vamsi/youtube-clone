@@ -1,4 +1,4 @@
-import React, { useContext,useState } from 'react';
+import React, { useContext } from 'react';
 import {v4 as uuidv4} from 'uuid';
 import { TiHomeOutline } from "react-icons/ti";
 import { IoGameController } from "react-icons/io5";
@@ -14,7 +14,7 @@ import ReactContext from '../../ReactContext/Context';
 import { Link } from 'react-router-dom';
 
 export const Sidebar = (props) => {
-    const {getSidebar,setSearchSidebar,searchSidebar} = useContext(ReactContext)
+    const {getSidebar} = useContext(ReactContext)
     const category=[
                         {id:uuidv4(),icon:<TiHomeOutline className='sidebar-icon'/>,name:'New'},
                         {id:uuidv4(),icon:<IoCode className='sidebar-icon'/>,name:"Coding"},
@@ -30,7 +30,7 @@ export const Sidebar = (props) => {
     <div className={getSidebar?'sidebar-container':'close-sidebar'}>
         <div className="shortcut-links">
             {category.map((eachItem)=>(
-                <Link to={`/video/${eachItem.name.toLowerCase()}`} className='nav-link'>
+                <Link to={`/video/${eachItem.name.toLowerCase()}`} className='nav-link' key={eachItem.id}>
                 <div className='side-link'>
                 {eachItem.icon}
                 <p>{eachItem.name}</p>
