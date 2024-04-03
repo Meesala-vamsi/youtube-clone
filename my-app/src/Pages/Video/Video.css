@@ -1,5 +1,5 @@
 .videos-container{
-    width: 100%;
+
 }
 
 .videos-container h1{
@@ -13,4 +13,8 @@
 .videos-list-container{
     display: flex;
     flex-wrap: wrap;
+}
+
+.success-container{
+    display: flex;
 }

@@ -8,16 +8,22 @@ import Navbar from './Components/Navbar/Navbar'
 import ContextProvider from './ReactContext/ContextProvider'
 import { useState } from 'react'
 import Channel from './Components/Channels/Channel'
+import { Video } from './Pages/Video/Video'
+import { Sidebar } from './Components/Sidebar/Sidebar'
 
 const App=()=>{
   return(
     <ContextProvider>
       <Navbar/>
+      {/* <div className='some'> */}
+        {/* <Sidebar/> */}
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path="/video/:videoId" element={<VideoDetails/>}/>
+        <Route path = '/video/:id' element={<Video/>}/>
+        <Route path="/videoDetails/:videoId" element={<VideoDetails/>}/>
         <Route path='/channel/:channelId' element={<Channel/>}/>
       </Routes>
+      {/* </div> */}
     </ContextProvider>
   )
 }

@@ -1,7 +1,6 @@
 
 .sidebar-container{
     padding: 15px;
-    width: 15%;
     background-color: #fff;
 }
 
@@ -61,4 +60,34 @@
     flex-wrap: wrap;
     margin-bottom: 0px;
     justify-content: flex-start;
+}
+
+@media screen and (max-width:768px){
+    .sidebar-container{
+        padding: 5px 2px;
+    }
+    .side-link{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        width: 45px;
+    }
+
+
+    .sidebar-icon{
+        font-size: 14px;
+
+        margin-right: 0px;
+ 
+
+    }
+
+    .side-link p{
+        font-size: 9px;
+    }
+
+    .subscribed-container{
+        display: none;
+    }
 }

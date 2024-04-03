@@ -1,16 +1,23 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import {Link,useParams,useNavigate} from 'react-router-dom'
 
 import { IoIosCheckmarkCircle } from "react-icons/io";
 
 import './VideoCard.css'
 
 const VideoCard = ({videoCardData}) => {
+    const navigate=useNavigate()
+    const params = useParams();
+    const {id} = params
+
+    const homeHeading=id[0].toUpperCase()+id.slice(1)
+    
   return (
     <div className='video-card-container'>
+        <h1>{homeHeading} <span>videos</span></h1>
         <ul className="videos-list-conatiner">
             {videoCardData.items.map((eachItem)=>(
-                <NavLink to={`video/${eachItem.id.videoId}`} className='nav-link'>
+                <Link to={`/videoDetails/${eachItem.id.videoId}`} className='nav-link'>
                     <li className='video-list-items'>
                         <img src={eachItem.snippet.thumbnails.high.url} alt="" className='video-image' />
                         <h1 className='channel-title'>{eachItem.snippet.title}</h1>
@@ -19,7 +26,7 @@ const VideoCard = ({videoCardData}) => {
                             <IoIosCheckmarkCircle className='check-circle-icon'/>
                         </div>
                     </li>
-                </NavLink>
+                </Link>
             ))}
         </ul>
     </div>

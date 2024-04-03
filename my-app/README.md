@@ -30,3 +30,6 @@
 <IoNewspaperOutline className='sidebar-icon'/>
 <p>News</p>
 </div>  -->
+
+<!--
+className={eachItem.name.toLowerCase()===searchSidebar?"hello nav-link":"side-link nav-link"} key={eachItem.id} onClick={()=>setSearchSidebar(eachItem.name.toLowerCase())} -->

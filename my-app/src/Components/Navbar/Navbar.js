@@ -16,7 +16,7 @@ const Navbar=(props)=>{
       
       <div className='nav-left flex-div'>
         <CiMenuBurger className='menu-icon' onClick={()=>setSidebar(prevState=>prevState===false?true:false)}/>
-        <Link to='/'className='nav-link'>
+        <Link to='/video/new'className='nav-link'>
         <div>
           <FaYoutube className='youtube-icon'/>
           <h1 className=''>YouTube</h1>

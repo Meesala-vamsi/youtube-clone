@@ -1,7 +1,7 @@
 
 
 .video-card-container{
-    width: 100%;
+ width: 100%;
 }
 
 .videos-list-conatiner{
@@ -22,6 +22,9 @@
     height: 300px;
     margin-bottom: 20px;
     overflow: hidden;
+}
+span{
+    color: red;
 }
 
 .video-list-items img{
@@ -59,4 +62,33 @@
 .check-circle-icon{
     color: gray;
     margin-top: 2px;
+}
+
+@media screen and (max-width:768px){
+    .video-list-items{
+        width: 150px;
+      
+        height: auto;
+        margin-left: 10px;
+    }
+    .video-list-items img {
+        height: 100px;  
+    }
+
+    .video-list-items .channel-title{
+        font-size: 12px;
+    }
+    .videos-list-conatiner{
+        justify-content: center;
+    }
+    .channel-container p{
+        font-size: 6px;
+    }
+    .check-circle-icon{
+        font-size: 6px;
+    }
+    .video-card-container h1:first-child{
+        font-size: 12px;
+        margin-left: 20px;
+    }
 }

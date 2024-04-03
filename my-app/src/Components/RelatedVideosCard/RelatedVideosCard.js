@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './RelatedVideosCard.css'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import { IoIosCheckmarkCircle } from "react-icons/io";
 
 const optionDetails={
@@ -12,6 +12,7 @@ const optionDetails={
   }
 
 export const RelatedVideosCard = ({videoId}) => {
+  const navigate=useNavigate();
     const [getPageStatus,setPageStatus] = useState(optionDetails.initial)
     const [getRelatedVideos,setRelatedVideos] = useState([])
     useEffect(()=>{
@@ -28,7 +29,7 @@ export const RelatedVideosCard = ({videoId}) => {
               order: 'date'
             },
             headers: {
-              'X-RapidAPI-Key': '82e9bd6c02msh6dbc6df2b769dc2p1c82cejsnecd9697be94c',
+              'X-RapidAPI-Key': '75243f8111mshb33e8afd9108f29p1f0d01jsn656662d20023',
               'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
             }
           }
@@ -46,10 +47,14 @@ export const RelatedVideosCard = ({videoId}) => {
         getVideoDetails();
       },[videoId])
 
+      const navigatePage = (someId)=>{
+        navigate(`/videoDetails/${someId}`)
+    }
+
       const successView=()=>(
         <ul className="related-videos-container">
         {getRelatedVideos.map((eachVideo)=>(
-          <Link to={`/video/${eachVideo.id.videoId}`} className='nav-link'>
+          <div onClick={()=>navigatePage(eachVideo.id.videoId)} style={{cursor:"pointer"}}>
           <li className="related-video-list-items" key={eachVideo.id.videoId}>
             <img src={eachVideo.snippet.thumbnails.default.url} alt="" className='related-images' />
             <div className='related-videos-content-container'>
@@ -60,7 +65,7 @@ export const RelatedVideosCard = ({videoId}) => {
                 </div>
             </div>
           </li>
-          </Link>
+          </div>
         ))}
       </ul>
       )

@@ -30,10 +30,12 @@ export const Sidebar = (props) => {
     <div className={getSidebar?'sidebar-container':'close-sidebar'}>
         <div className="shortcut-links">
             {category.map((eachItem)=>(
-                <div  className={eachItem.name.toLowerCase()===searchSidebar?"hello nav-link":"side-link nav-link"} key={eachItem.id} onClick={()=>setSearchSidebar(eachItem.name.toLowerCase())}>
+                <Link to={`/video/${eachItem.name.toLowerCase()}`} className='nav-link'>
+                <div className='side-link'>
                 {eachItem.icon}
                 <p>{eachItem.name}</p>
                 </div>
+                </Link>
             ))}
         </div>
         <hr/>

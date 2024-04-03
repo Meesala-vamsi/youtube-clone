@@ -2,12 +2,13 @@
     display: flex;
     justify-content: space-between;
     top: 0;
-    padding: 5px 20px;
+    padding: 5px 8px;
     font-family: "Roboto";
     background-color: #fff;
     position: sticky;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     z-index: 10;
+    width: 100%;
 }
 
 .nav-left .menu-icon{
@@ -84,4 +85,52 @@
     bottom: 7px;
     left: 25px;
 
+}
+
+@media screen and (max-width:768px){
+    .nav-right .profile-image{
+        margin-left: 4px;
+        height: 15px;
+        width: 15px;
+        border-radius: 9px;
+    }
+    .nav-middle .nav-input{
+        width: 30%;
+    }
+
+    .nav-left .youtube-icon{
+        font-size: 17px;
+        margin-left: 9px;
+    }
+
+    .nav-left h1{
+        font-size: 11px;
+    }
+    .nav-left .menu-icon{
+        font-size: 10px;
+        margin-right: 0px;
+    }
+
+    .nav-right .nav-right-icon{
+        font-size: 14px;
+    }
+
+    .notifications-count{
+        bottom: 5px;
+        left: 17px;
+        font-size: 2px;
+        padding: 2.5px 3.5px;
+        border-radius: 15px;
+    }
+    .nav-middle .nav-input{
+        width: 150px;
+    }
+    .nav-middle .search-box{
+        margin-left: 10px;
+        height: 10px;
+        margin-right: 0px;
+    }
+    .nav-right .nav-right-icon{
+        margin-left: 4px;
+    }
 }

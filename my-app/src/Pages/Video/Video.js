@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
+import {useParams} from 'react-router-dom'
 import axios from 'axios';
 
 import './Video.css'
 import ReactContext from '../../ReactContext/Context';
 import VideoCard from '../../Components/VideoCard/VideoCard';
+import { Sidebar } from '../../Components/Sidebar/Sidebar';
 
 
 const optionDetails={
@@ -17,8 +19,10 @@ export const Video = () => {
   const [getVideos,setVideos] = useState([])
   const [statusData,setStatus] = useState(optionDetails.initial)
   const {searchSidebar} = useContext(ReactContext)
-  console.log(searchSidebar)
-  const homeHeading = searchSidebar[0].toUpperCase()+searchSidebar.slice(1)
+  const params = useParams();
+  const {id} = params
+  console.log(id)
+  const homeHeading = id[0].toUpperCase()+id.slice(1)
   useEffect(()=>{
     const getDetails=async()=>{
 
@@ -26,14 +30,14 @@ export const Video = () => {
           method:"GET",
           url: 'https://youtube-v31.p.rapidapi.com/search',
           params: {
-            q: searchSidebar,
+            q: id,
             part: 'snippet,id',
             regionCode: 'US',
             maxResults: '50',
             order: 'date'
           },
           headers: {
-            'X-RapidAPI-Key': '82e9bd6c02msh6dbc6df2b769dc2p1c82cejsnecd9697be94c',
+            'X-RapidAPI-Key': '75243f8111mshb33e8afd9108f29p1f0d01jsn656662d20023',
             'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
           }
         }
@@ -47,7 +51,7 @@ export const Video = () => {
     }
 
     getDetails();
-  },[searchSidebar])
+  },[id])
 
   console.log(getVideos)
 
@@ -57,7 +61,11 @@ export const Video = () => {
 
   const successView=()=>(
     <div className="success-container">
+
+      <Sidebar/>
+  
         <VideoCard videoCardData={getVideos}/>
+
     </div>
   )
 
@@ -74,7 +82,6 @@ export const Video = () => {
 
   return (
     <div className="videos-container">
-      <h1>{homeHeading} <span>videos</span></h1>
       {renderView()}
     </div>
   )
