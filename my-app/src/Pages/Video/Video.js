@@ -18,11 +18,9 @@ const optionDetails={
 export const Video = () => {
   const [getVideos,setVideos] = useState([])
   const [statusData,setStatus] = useState(optionDetails.initial)
-  const {searchSidebar} = useContext(ReactContext)
   const params = useParams();
   const {id} = params
   console.log(id)
-  const homeHeading = id[0].toUpperCase()+id.slice(1)
   useEffect(()=>{
     const getDetails=async()=>{
 
