@@ -44,7 +44,6 @@ export const Video = () => {
   
         if(response.status===200){
           setStatus(optionDetails.success)
-          setSearchInput(id)
           // console.log(response.data)
           setVideos(response.data)
 
