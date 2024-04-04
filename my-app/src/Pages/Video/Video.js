@@ -53,6 +53,7 @@ export const Video = () => {
 
     getDetails();
   },[id])
+  console.log(getVideos)
   
 
   const loadingView=()=>(

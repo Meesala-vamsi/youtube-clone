@@ -12,7 +12,7 @@ const VideoCard = ({videoCardData}) => {
     const {id} = params
 
     const filteredData=videoCardData.items.filter((eachVideo)=>(
-        eachVideo.snippet.title.toLowerCase().includes(getSearchInput.toLowerCase())
+        eachVideo.snippet.title.toLowerCase().includes(getSearchInput)
     ))
     
   return (
