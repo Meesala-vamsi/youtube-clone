@@ -6,8 +6,9 @@ const ContextProvider=({children})=>{
     const [getSearchInput,setSearchInput] = useState('')
     const [searchSidebar,setSearchSidebar] = useState("new")
     const [getChanenlId,setChannelId] = useState('')
+    const [a,seta] = useState('new')
     return(
-        <ReactContext.Provider value={{getSidebar,setSidebar,searchSidebar,setSearchSidebar,getChanenlId,setChannelId,setSearchInput,getSearchInput}}>
+        <ReactContext.Provider value={{getSidebar,setSidebar,searchSidebar,setSearchSidebar,getChanenlId,a,seta,setChannelId,setSearchInput,getSearchInput}}>
             {children}
         </ReactContext.Provider>
     )

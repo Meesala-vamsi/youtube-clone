@@ -35,7 +35,7 @@ const VideoDetails = () => {
           id: videoId
         },
         headers: {
-          'X-RapidAPI-Key': '75243f8111mshb33e8afd9108f29p1f0d01jsn656662d20023',
+          'X-RapidAPI-Key': '7b165fcb75msh32aaf6485ee33b8p1ffdf4jsna46b67aed186',
           'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
         }
       }

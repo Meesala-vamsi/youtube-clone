@@ -18,25 +18,24 @@ const optionDetails={
 export const Video = () => {
   const [getVideos,setVideos] = useState([])
   const [statusData,setStatus] = useState(optionDetails.initial)
-  const {getSearchInput} = useContext(ReactContext)
+  const {getSearchInput,setSearchInput} = useContext(ReactContext)
   const params = useParams();
   const {id} = params
   useEffect(()=>{
     const getDetails=async()=>{
 
-
         const options={
           method:"GET",
           url: 'https://youtube-v31.p.rapidapi.com/search',
           params: {
-            q: getSearchInput,
+            q: id,
             part: 'snippet,id',
             regionCode: 'US',
             maxResults: '50',
             order: 'date'
           },
           headers: {
-            'X-RapidAPI-Key': '75243f8111mshb33e8afd9108f29p1f0d01jsn656662d20023',
+            'X-RapidAPI-Key': '7b165fcb75msh32aaf6485ee33b8p1ffdf4jsna46b67aed186',
             'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
           }
         }
@@ -44,18 +43,17 @@ export const Video = () => {
         const response = await axios.request(options)
   
         if(response.status===200){
-          setVideos(response.data)
           setStatus(optionDetails.success)
-          response.data.items.filter((eachVideo)=>(
-              eachVideo.snippet.title.toLowerCase().includes(getSearchInput.toLowerCase())
-          ))
+          setSearchInput(id)
+          // console.log(response.data)
+          setVideos(response.data)
 
         }
     }
 
     getDetails();
-  },[id,getSearchInput])
-
+  },[id])
+  
 
   const loadingView=()=>(
     <div>Loading......</div>

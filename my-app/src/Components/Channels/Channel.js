@@ -32,7 +32,7 @@ const Channel = () => {
                   id: channelId
                 },
                 headers: {
-                  'X-RapidAPI-Key': '75243f8111mshb33e8afd9108f29p1f0d01jsn656662d20023',
+                  'X-RapidAPI-Key': 'c65ea66a1dmsh07b6a7a3aed4a42p1b432ejsnd86eda6c2d3e',
                   'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
                 }
               };
@@ -47,7 +47,7 @@ const Channel = () => {
                     maxResults: '50'
                 },
                 headers: {
-                    'X-RapidAPI-Key': '75243f8111mshb33e8afd9108f29p1f0d01jsn656662d20023',
+                    'X-RapidAPI-Key': 'c65ea66a1dmsh07b6a7a3aed4a42p1b432ejsnd86eda6c2d3e',
                     'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
                 }
               }

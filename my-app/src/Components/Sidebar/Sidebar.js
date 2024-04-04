@@ -6,6 +6,7 @@ import { GiGraduateCap } from "react-icons/gi";
 import { MdOutlineSportsBasketball } from "react-icons/md";
 import { IoCode } from "react-icons/io5";
 import { MdLibraryMusic } from "react-icons/md";
+import { MdMovieFilter } from "react-icons/md";
 
 
 
@@ -17,13 +18,14 @@ export const Sidebar = (props) => {
     const {getSidebar} = useContext(ReactContext)
     const category=[
                         {id:uuidv4(),icon:<TiHomeOutline className='sidebar-icon'/>,name:'New'},
+                        {id:uuidv4(),icon:<MdMovieFilter className='sidebar-icon'/>,name:"Movie"},
                         {id:uuidv4(),icon:<IoCode className='sidebar-icon'/>,name:"Coding"},
                         {id:uuidv4(),icon:<IoCode className='sidebar-icon'/>,name:"JS Mastery"},
                         {id:uuidv4(),icon:<IoCode className='sidebar-icon'/>,name:"ReactJS"},
                         {id:uuidv4(),icon:<IoGameController className='sidebar-icon'/>,name:"Gaming"},
                         {id:uuidv4(),icon:<MdLibraryMusic className='sidebar-icon'/>,name:"Music"},
                         {id:uuidv4(),icon:<GiGraduateCap className='sidebar-icon'/>,name:"Education"},
-                        {id:uuidv4(),icon:<MdOutlineSportsBasketball className='sidebar-icon'/>,name:"Sport"},
+                        {id:uuidv4(),icon:<MdOutlineSportsBasketball className='sidebar-icon'/>,name:"Sport"}
 
                     ]
   return (
