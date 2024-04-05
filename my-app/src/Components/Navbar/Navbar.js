@@ -7,13 +7,20 @@ import { MdOutlineVideoCall } from "react-icons/md";
 
 import './Navbar.css'
 import ReactContext from '../../ReactContext/Context';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 const Navbar=(props)=>{
-  const {setSidebar,setSearchInput} = useContext(ReactContext)
+  const {setSidebar,setSearchInput,getSearchInput} = useContext(ReactContext)
+  const [hello,setHello] = useState('')
+  const navigate=useNavigate()
 
   const onChangeInput=(event)=>{
+    setHello(event.target.value)
     setSearchInput(event.target.value)
+  }
+
+  const onClickSearch=()=>{
+    navigate(`/video/${hello}`)
   }
   return (
     <nav className='nav-container'>
@@ -31,7 +38,7 @@ const Navbar=(props)=>{
       <div className='nav-middle flex-div'>
         <div className="search-box flex-div">
           <input type="search" className='nav-input' placeholder='Search' onChange={onChangeInput} />
-          <GoSearch className='search-icon'/>
+          <GoSearch className='search-icon' onClick={onClickSearch}/>
         </div>
         
       </div>

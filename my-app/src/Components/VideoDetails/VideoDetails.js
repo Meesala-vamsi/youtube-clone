@@ -1,13 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link, useParams} from 'react-router-dom'
 import  axios  from 'axios'
 import ReactPlayer from 'react-player'
 import './VideoDetails.css'
 import { IoIosCheckmarkCircle } from "react-icons/io";
-import ReactContext from '../../ReactContext/Context'
 import { RelatedVideosCard } from '../RelatedVideosCard/RelatedVideosCard'
 import { VideoComments } from '../VideoComments/VideoComments'
-import {Sidebar} from '../Sidebar/Sidebar'
 
 const optionDetails={
   success:"SUCCESS",
@@ -21,8 +19,7 @@ const VideoDetails = () => {
   const {videoId} = params
   const [getVideos,setVideoDetails] = useState([])
   const [getPageStatus,setPageStatus] = useState(optionDetails.initial)
-  const {setChannelId} = useContext(ReactContext);
-  const isplaying=true
+
   
   useEffect(()=>{
     const getVideoDetails=async()=>{
@@ -47,7 +44,6 @@ const VideoDetails = () => {
         if(response.data.items[0]!==undefined){
         setVideoDetails(response.data.items[0])
         }
-        // setChannelId(response.data.items[0].snipet.channelId)
       }catch(e){
         console.log(e.message)
         setPageStatus(optionDetails.failure)
@@ -57,7 +53,6 @@ const VideoDetails = () => {
     getVideoDetails();
   },[videoId])
 
-  // console.log(getVideos)
 
  if(!getVideos?.snippet) return 'Loading...'
 

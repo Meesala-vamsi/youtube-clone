@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import {Link, useParams} from 'react-router-dom'
-import ReactContext from '../../ReactContext/Context';
+
 import { Sidebar } from '../Sidebar/Sidebar';
 import './Channel.css'
 
@@ -19,7 +19,6 @@ const Channel = () => {
     const [getChannelData,setChannelData] = useState([])
     const [getChannelVideos,setChannelVideos] = useState([])
     const [channelStatus,setChannelStatus] = useState(statusOptions.initial)
-    const {getChannelId} = useContext(ReactContext)
     const params = useParams()
     const {channelId} = params;
     useEffect(()=>{
@@ -59,7 +58,7 @@ const Channel = () => {
                   setChannelVideos(channelVideosResponse.data.items)
                   setChannelData(response.data.items[0])
               } catch (error) {
-                  console.error(error);
+                  setChannelStatus(statusOptions.failure)
               }
         }
 

@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import axios from 'axios';
 
 import './Video.css'
-import ReactContext from '../../ReactContext/Context';
 import VideoCard from '../../Components/VideoCard/VideoCard';
 import { Sidebar } from '../../Components/Sidebar/Sidebar';
 
@@ -18,7 +17,6 @@ const optionDetails={
 export const Video = () => {
   const [getVideos,setVideos] = useState([])
   const [statusData,setStatus] = useState(optionDetails.initial)
-  const {getSearchInput,setSearchInput} = useContext(ReactContext)
   const params = useParams();
   const {id} = params
   useEffect(()=>{
